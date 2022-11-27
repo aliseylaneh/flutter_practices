@@ -27,11 +27,18 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       home: Row(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           BlueBox(),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 1,
+            child: BlueBox(),
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 1,
+            child: BlueBox(),
+          ),
         ],
       ),
     );
@@ -42,7 +49,7 @@ class BlueBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 70,
       height: 50,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(20.0)),
@@ -50,17 +57,8 @@ class BlueBox extends StatelessWidget {
         border: Border.all(),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Icon(size: 30, Icons.add_call),
-          Text(
-            'add call',
-            style: TextStyle(
-              fontSize: 20.0,
-            ),
-          )
         ],
       ),
     );
