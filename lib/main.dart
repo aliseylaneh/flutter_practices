@@ -17,9 +17,14 @@ class MyApp extends StatelessWidget {
       home: Row(
         children: [
           BlueBox(),
+          SizedBox(
+            width: 50,
+            height: 50,
+            child: BlueBox(),
+          ),
           Flexible(
             fit: FlexFit.tight,
-            flex: 1,
+            flex: 2,
             child: BlueBox(),
           ),
           Expanded(
