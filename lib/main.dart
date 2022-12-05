@@ -22,9 +22,12 @@ class MyApp extends StatelessWidget {
             flex: 2,
             child: BlueBox(),
           ),
+          const Spacer(
+            flex: 2,
+          ),
           SizedBox(
             width: 50,
-            height: 50,
+            child: BlueBox(),
           ),
           Expanded(
             flex: 2,
