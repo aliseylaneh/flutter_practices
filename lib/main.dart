@@ -19,49 +19,34 @@ class MyApp extends StatelessWidget {
           Flexible(
               fit: FlexFit.tight,
               flex: 2,
-              child: BlueBox(
-                  const Icon(
-                    Icons.call,
-                    color: Colors.black,
-                    size: 30,
-                  ),
-                  const DefaultTextStyle(
-                    style: TextStyle(fontSize: 10),
-                    child: Text('Call'),
-                  ))),
+              child: ParentBox(const [
+                Icon(
+                  Icons.call,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                DefaultTextStyle(
+                  style: TextStyle(fontSize: 10),
+                  child: Text('Call'),
+                )
+              ])),
           const Spacer(
             flex: 1,
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: BlueBox(
-                const Icon(
-                  Icons.message,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                const DefaultTextStyle(
-                  style: TextStyle(fontSize: 10),
-                  child: Text('Message'),
-                )),
-          ),
-          const Spacer(
-            flex: 1,
-          ),
-          Flexible(
-            fit: FlexFit.tight,
-            flex: 2,
-            child: BlueBox(
-                const Icon(
-                  Icons.contact_page,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                const DefaultTextStyle(
-                  style: TextStyle(fontSize: 10),
-                  child: Text('Contacts'),
-                )),
+            child: ParentBox(const [
+              Icon(
+                Icons.message,
+                color: Colors.black,
+                size: 30,
+              ),
+              DefaultTextStyle(
+                style: TextStyle(fontSize: 10),
+                child: Text('Message'),
+              )
+            ]),
           ),
           const Spacer(
             flex: 1,
@@ -69,16 +54,35 @@ class MyApp extends StatelessWidget {
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: BlueBox(
-                const Icon(
-                  Icons.settings,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                const DefaultTextStyle(
-                  style: TextStyle(fontSize: 10),
-                  child: Text('settings'),
-                )),
+            child: ParentBox(const [
+              Icon(
+                Icons.contact_page,
+                color: Colors.black,
+                size: 30,
+              ),
+              DefaultTextStyle(
+                style: TextStyle(fontSize: 10),
+                child: Text('Contacts'),
+              )
+            ]),
+          ),
+          const Spacer(
+            flex: 1,
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 2,
+            child: ParentBox(const [
+              Icon(
+                Icons.settings,
+                color: Colors.black,
+                size: 30,
+              ),
+              DefaultTextStyle(
+                style: TextStyle(fontSize: 10),
+                child: Text('settings'),
+              )
+            ]),
           ),
         ],
       ),
@@ -86,11 +90,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class BlueBox extends StatelessWidget {
-  BlueBox(this.specificIcon, this.myButtonText);
+class ParentBox extends StatelessWidget {
+  ParentBox(this.items);
 
-  final Icon specificIcon;
-  final DefaultTextStyle myButtonText;
+  final List<dynamic> items;
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +107,7 @@ class BlueBox extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [specificIcon, myButtonText],
+        children: [for (var item in items) item],
       ),
     );
   }
