@@ -16,26 +16,69 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       home: Row(
         children: [
-          BlueBox(),
+          Flexible(
+              fit: FlexFit.tight,
+              flex: 2,
+              child: BlueBox(
+                  const Icon(
+                    Icons.call,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  const DefaultTextStyle(
+                    style: TextStyle(fontSize: 10),
+                    child: Text('Call'),
+                  ))),
+          const Spacer(
+            flex: 1,
+          ),
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: BlueBox(),
+            child: BlueBox(
+                const Icon(
+                  Icons.message,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                const DefaultTextStyle(
+                  style: TextStyle(fontSize: 10),
+                  child: Text('Message'),
+                )),
           ),
-          const SizedBox(
-              width: 50,
-              child: DefaultTextStyle(
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.blueGrey,
-                  ),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    'Hey!',
-                  ))),
-          Expanded(
+          const Spacer(
+            flex: 1,
+          ),
+          Flexible(
+            fit: FlexFit.tight,
             flex: 2,
-            child: BlueBox(),
+            child: BlueBox(
+                const Icon(
+                  Icons.contact_page,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                const DefaultTextStyle(
+                  style: TextStyle(fontSize: 10),
+                  child: Text('Contacts'),
+                )),
+          ),
+          const Spacer(
+            flex: 1,
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 2,
+            child: BlueBox(
+                const Icon(
+                  Icons.settings,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                const DefaultTextStyle(
+                  style: TextStyle(fontSize: 10),
+                  child: Text('settings'),
+                )),
           ),
         ],
       ),
@@ -44,6 +87,11 @@ class MyApp extends StatelessWidget {
 }
 
 class BlueBox extends StatelessWidget {
+  BlueBox(this.specificIcon, this.myButtonText);
+
+  final Icon specificIcon;
+  final DefaultTextStyle myButtonText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,11 +102,9 @@ class BlueBox extends StatelessWidget {
         color: Colors.blue,
         border: Border.all(),
       ),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(size: 30, Icons.add_call),
-        ],
+        children: [specificIcon, myButtonText],
       ),
     );
   }
