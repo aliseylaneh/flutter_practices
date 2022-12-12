@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/rendering/flex.dart';
+import 'package:one_test_practice/personal_card.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PersonalCard());
 }
 
 class MyApp extends StatelessWidget {
@@ -97,18 +98,20 @@ class ParentBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-        color: Colors.blue,
-        border: Border.all(),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [for (var item in items) item],
-      ),
-    );
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+
+            border: Border.all(),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [for (var item in items) item],
+          ),
+        ));
   }
 }
