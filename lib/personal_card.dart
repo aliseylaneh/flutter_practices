@@ -9,24 +9,13 @@ class PersonalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        home: Scaffold(
-          backgroundColor: Colors.black,
-          appBar: AppBar(
-            backgroundColor: Colors.blueGrey,
-            leading: const IconButton(
-              icon: Icon(Icons.computer),
-              tooltip: 'Navigation menu',
-              onPressed: null,
-              color: Colors.red,
-            ),
-          ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [MyCard()],
-          ),
-        ));
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [MyCard()],
+      ),
+    );
   }
 }
 
