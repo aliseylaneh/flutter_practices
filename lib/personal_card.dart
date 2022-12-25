@@ -43,10 +43,9 @@ class MyCard extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/26126146?v=4',
-                ),
+                backgroundImage: AssetImage('images/person_1.png'),
                 radius: 25,
+                backgroundColor: Colors.white,
               ),
             ),
             Column(
