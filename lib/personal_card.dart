@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/rendering/flex.dart';
 import 'package:one_test_practice/main.dart';
 
 class PersonalCard extends StatelessWidget {
@@ -65,29 +64,29 @@ class MyCard extends StatelessWidget {
         const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ParentBox(const [
+          children: const [
+            ParentBox([
               Icon(
                 Icons.accessibility,
                 color: Colors.white,
                 size: 30,
               ),
             ]),
-            ParentBox(const [
+            ParentBox([
               Icon(
                 Icons.timer,
                 color: Colors.white,
                 size: 30,
               ),
             ]),
-            ParentBox(const [
+            ParentBox([
               Icon(
                 Icons.phone_android,
                 color: Colors.white,
                 size: 30,
               ),
             ]),
-            ParentBox(const [
+            ParentBox([
               Icon(
                 Icons.phone_iphone,
                 color: Colors.white,

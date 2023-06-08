@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/rendering/flex.dart';
 import 'package:one_test_practice/personal_card.dart';
 
 void main() {
@@ -16,11 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: Row(
-        children: [
+        children: const [
           Flexible(
               fit: FlexFit.tight,
               flex: 2,
-              child: ParentBox(const [
+              child: ParentBox([
                 Icon(
                   Icons.call,
                   color: Colors.black,
@@ -31,13 +30,13 @@ class MyApp extends StatelessWidget {
                   child: Text('Call'),
                 )
               ])),
-          const Spacer(
+          Spacer(
             flex: 1,
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: ParentBox(const [
+            child: ParentBox([
               Icon(
                 Icons.message,
                 color: Colors.black,
@@ -49,13 +48,13 @@ class MyApp extends StatelessWidget {
               )
             ]),
           ),
-          const Spacer(
+          Spacer(
             flex: 1,
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: ParentBox(const [
+            child: ParentBox([
               Icon(
                 Icons.contact_page,
                 color: Colors.black,
@@ -67,13 +66,13 @@ class MyApp extends StatelessWidget {
               )
             ]),
           ),
-          const Spacer(
+          Spacer(
             flex: 1,
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 2,
-            child: ParentBox(const [
+            child: ParentBox([
               Icon(
                 Icons.settings,
                 color: Colors.black,
@@ -92,7 +91,7 @@ class MyApp extends StatelessWidget {
 }
 
 class ParentBox extends StatelessWidget {
-  ParentBox(this.items);
+  const ParentBox(this.items, {super.key});
 
   final List<dynamic> items;
 
@@ -105,7 +104,6 @@ class ParentBox extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-
             border: Border.all(),
           ),
           child: Column(
