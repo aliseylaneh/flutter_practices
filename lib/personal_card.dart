@@ -7,12 +7,12 @@ class PersonalCard extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [MyCard()],
+        children: [MyCard()],
       ),
     );
   }
@@ -23,12 +23,12 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
                 backgroundImage: AssetImage('images/person_1.png'),
@@ -38,7 +38,7 @@ class MyCard extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 DefaultTextStyle(
                     style: TextStyle(fontSize: 27, fontStyle: FontStyle.normal),
                     child: Text('Ali Seylaneh')),
@@ -49,10 +49,10 @@ class MyCard extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
+          children: [
             DefaultTextStyle(
                 style: TextStyle(fontSize: 15, fontStyle: FontStyle.normal),
                 child: Text('123 Main Street')),
@@ -61,10 +61,10 @@ class MyCard extends StatelessWidget {
                 child: Text('(415) 555-0198'))
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             ParentBox([
               Icon(
                 Icons.accessibility,
