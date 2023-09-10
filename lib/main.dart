@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:one_test_practice/personal_card.dart';
+import 'package:one_test_practice/pages/home.dart';
 
 void main() {
-  runApp(const PersonalCard());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+      theme: ThemeData(fontFamily: 'Poppins'),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyAppOne extends StatelessWidget {
+  const MyAppOne({super.key});
 
   // This widget is the root of your application.
   @override
